@@ -1,0 +1,162 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R Built-in Datasets",
+    "section": "",
+    "text": "Preface\nStudents learning R need accessible data to practice their coding skills. In theory, R provides this through its many built‑in datasets. In practice, however, working with these datasets isn’t always as simple as it sounds.\nI wrote this book to close this gap between theory and reality.\nR offers multiple ways to access and handle built-in datasets, and many of those approaches assume familiarity with packages, environments, and memory management—skills beginners typically haven’t developed yet. This book removes that early complexity by giving you a clear, guided path to the essential techniques for working confidently with R’s built‑in datasets.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Contents\nWorking with R’s built‑in datasets can feel surprisingly challenging when you’re just getting started. This book is designed to remove that friction.\nIt won’t turn you into an expert overnight, but it will give you the practical skills you need to become confident and capable. Along the way, you’ll build a solid foundation that makes deeper exploration easy whenever you’re ready for it.\nThe approach is simple: Show, then Tell. You’ll see each idea demonstrated in real code first, and only then will we break down how and why it works.\nChapters 1 - 4\nThese chapters introduce the essentials of working with built‑in datasets, using examples from three popular R packages.\nYou’ll learn how to find, load, and explore datasets so you can start working with them immediately.\nChapter 5\nThis chapter presents a streamlined workflow that ties together the techniques from earlier chapters.\nThink of it as a quick‑reference guide you can return to whenever you need a refresher.\nChapter 6\nA bonus chapter that highlights several widely used datasets, explaining what makes them so popular and how they’re typically applied.\nYou’ll also get another lean workflow to support your future work.\nChapter 7\nThe final chapter wraps up your learning and offers suggestions for where to go next as you continue building your R skills.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html",
+    "href": "c060030.html",
+    "title": "2  starwars dataset",
+    "section": "",
+    "text": "2.1 Introduction\nThink of this as your jump-start chapter. We’ll cover the essential definitions and walk through simple code snippets so you can start working with built-in datasets right away.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#introduction",
+    "href": "c060030.html#introduction",
+    "title": "2  starwars dataset",
+    "section": "",
+    "text": "2.1.1 built-in\nWhen you think of an R package, you’re most likely interested in the functions it contains.\nWhile functions are essential to R, be aware that many packages also contain datasets that you can use to practice R coding. Because these datasets are part of a package, they’re sometimes referred to as built-in.\nThe starwars dataset contained in the dplyr package is popular.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#context",
+    "href": "c060030.html#context",
+    "title": "2  starwars dataset",
+    "section": "2.2 Context",
+    "text": "2.2 Context\nImagine you are an avid Starwars fan and want to do some R coding with data about Starwars characters.\nSo, what should you consider when using the starwars dataset?\nThis chapter demonstrates and then introduces key concepts about using starwars specifically and built-in datasets in general.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#install",
+    "href": "c060030.html#install",
+    "title": "2  starwars dataset",
+    "section": "2.3 Install",
+    "text": "2.3 Install\nTo use a dataset, the package that contains it must be installed.\nFor this chapter, it’s assumed the dplyr package is installed. If it’s not run: install.packages(“dplyr”).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#load",
+    "href": "c060030.html#load",
+    "title": "2  starwars dataset",
+    "section": "2.4 Load",
+    "text": "2.4 Load\n\ndata(starwars, package = \"dplyr\")\nmy_starwars &lt;- starwars\nls()\n\n[1] \"my_starwars\" \"starwars\"   \n\n\nThese three lines of code represent a good practice for loading and preparing to use a dataset.\n1st line: requests the dataset be put into the global environment (dataset loaded into the session)\n2nd line: materializes starwars in the global environment and makes a copy named my_starwars\n3rd line: lists the object now in the global environment\n\n\n\n\n\n\nNote\n\n\n\nYou can now make changes to my_starwars and then later, if needed, compare my_starwars to starwars to see the differences.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#explore",
+    "href": "c060030.html#explore",
+    "title": "2  starwars dataset",
+    "section": "2.5 Explore",
+    "text": "2.5 Explore\nIt’s a good practice to explore the structure and contents of a dataset before using it.\n\n2.5.1 help()\n\nhelp(\"starwars\", package = \"dplyr\")\n\nstarting httpd help server ... done\n\n\nWhen you run the code above, a new window titled “R: Starwars characters” is opened that displays information about the datasets. Here’s part of what you’ll see:\n\n\n\n2.5.2 class()\nAnother important function to use right away is class().\n\nclass(starwars)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\nThe code above shows that starwars is a tibble, which is a modern version of a data frame.\n\n\n2.5.3 Other functions\nThere are many other functions you can use to explore the structure and contents of a dataset including: dim(), str(), summary(), and head().",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#use",
+    "href": "c060030.html#use",
+    "title": "2  starwars dataset",
+    "section": "2.6 Use",
+    "text": "2.6 Use\nOnce a dataset is in the global environment, it can be read or updated.\n\nbase_r_starwars &lt;- starwars[\n  starwars$species %in% c(\"Human\", \"Droid\"), # Filter rows\n  c(\"name\", \"species\")                       # Select columns\n]\nhead(base_r_starwars)\n\n            name species\n1 Luke Skywalker   Human\n2          C-3PO   Droid\n3          R2-D2   Droid\n4    Darth Vader   Human\n5    Leia Organa   Human\n6      Owen Lars   Human\n\n\nThe code above uses base R functions to create a new tibble named base_r_starwars, which contains information only for humans and droids.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#dplyr",
+    "href": "c060030.html#dplyr",
+    "title": "2  starwars dataset",
+    "section": "2.7 dplyr",
+    "text": "2.7 dplyr\nIn the context of this chapter so far, imagine that you were just learning base R functions and using them on the starwars dataset. This means there has not been a neeed to make the entire dplyr package available to the R session.\nNow, image you’ve decide to start learning dplyr functions. In particular, you’d like to again select information about humans and droids from starwars, but this time using dplyr functions instead of just base R functions.\n\n\n\n\n\n\nNote\n\n\n\nRecall that earlier you verified the dplyr package is installed. (Otherwise, you would not have been able to access its starwars dataset.)\n\n\n\n2.7.1 library()\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nThe code above runs the library() function on dplyr, making the package available to the session.\n\n\n2.7.2 dplyr functions\n\ndplyr_starwars &lt;- starwars %&gt;% filter(species %in% c(\"Human\", \"Droid\")) %&gt;% select(name, species)\nhead(dplyr_starwars)\n\n# A tibble: 6 × 2\n  name           species\n  &lt;chr&gt;          &lt;chr&gt;  \n1 Luke Skywalker Human  \n2 C-3PO          Droid  \n3 R2-D2          Droid  \n4 Darth Vader    Human  \n5 Leia Organa    Human  \n6 Owen Lars      Human  \n\n\nThe code above uses dplyr functions to create a new tibble named dplyr_starwars, which contains information only for humans and droids.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#list-datasets",
+    "href": "c060030.html#list-datasets",
+    "title": "2  starwars dataset",
+    "section": "2.8 List datasets",
+    "text": "2.8 List datasets\nIf you’ve found one dataset in a package that you like, it’s likely you might want to see if there are other datasets in that package.\n\ndata(package = \"dplyr\")\n\nThe code above shows another use for the data() function. Now data() lists the datasets available in a package.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060030.html#wrap-up",
+    "href": "c060030.html#wrap-up",
+    "title": "2  starwars dataset",
+    "section": "2.9 Wrap-Up",
+    "text": "2.9 Wrap-Up\n\nMany R packages include built-in datasets that are useful for learning and practicing R. These datasets are generally intended for instructional purposes, not for production data analysis.\nBefore using any dataset, it is good practice to explore its structure, variables, and documentation\nIn many cases, you will use library() to attach a package and make its functions available in your R session. In other situations, you may only want to load a dataset from a package into the global environment.\nThe data() function is the standard and recommended way to load a dataset into the global environment.\nThe data() function can also be used to list the datasets that are available in a package.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html",
+    "href": "c060040.html",
+    "title": "3  diamonds dataset",
+    "section": "",
+    "text": "3.1 Introduction\nThis chapter builds on the concepts introduced in the previous chapter by providing additional practice with another well-known built-in dataset.\nIn this chapter, we work with the diamonds dataset from the ggplot2 package. Although this dataset is commonly used to create engaging data visualizations, it’s also widely used for practicing general R coding skills.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html#introduction",
+    "href": "c060040.html#introduction",
+    "title": "3  diamonds dataset",
+    "section": "",
+    "text": "Note\n\n\n\nFor brevity, some of the coding details required to access and use diamonds are not explained in detail as they were in the prior chapter.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html#load",
+    "href": "c060040.html#load",
+    "title": "3  diamonds dataset",
+    "section": "3.2 Load",
+    "text": "3.2 Load\nThe steps below will load diamonds into the global environment.\n\n3.2.1 Installed\nConfirm ggplot2 is installed. If not, do so.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "wrap_up.html",
+    "href": "wrap_up.html",
+    "title": "4  Wrap-up",
+    "section": "",
+    "text": "R’s built‑in datasets provide an ideal starting point for learning the language. They’re accessible, well‑documented, and designed to help you practice real data‑analysis skills. Throughout this book, the goal has been to give you a clear, consistent workflow for discovering these datasets, loading them, exploring their structure, and using them effectively in your own code.\nThe techniques you’ve learned form a practical foundation. They’re intentionally simple, reliable, and repeatable—exactly what you need when you’re building confidence with R. While there are additional ways to work with built‑in datasets, many of those alternatives require deeper knowledge of packages, environments, and memory management. Those tools can be powerful, but they also introduce nuances that sit beyond the scope of a beginner‑focused guide.\nBy applying the workflow presented here, you’ll be able to handle the vast majority of tasks you’re likely to encounter—easily 80% of the work you’ll want to do with R’s built‑in datasets.\nLearning R is a process, and you’ve taken an important step by learning how to work with the datasets that come built into the language. These datasets are more than practice material—they’re a gateway to understanding how R thinks about data. With the foundation you’ve built, you’re ready to move confidently into the broader world of data analysis, visualization, and statistical modeling.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Wrap-up</span>"
+    ]
+  }
+]
