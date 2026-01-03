@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Wrap-up – R Built-in Datasets</title>
+<title>1&nbsp; Introduction – R Built-in Datasets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./c060040.html" rel="prev">
+<link href="./c060030.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./wrap_up.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Wrap-up</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -132,8 +133,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wrap_up.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
+  <a href="./c060050.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
     </ul>
@@ -141,15 +148,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#contents" id="toc-contents" class="nav-link active" data-scroll-target="#contents"><span class="header-section-number">1.1</span> Contents</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Wrap-up</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 </div>
 
 
@@ -166,12 +179,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>R’s built‑in datasets provide an ideal starting point for learning the language. They’re accessible, well‑documented, and designed to help you practice real data‑analysis skills. Throughout this book, the goal has been to give you a clear, consistent workflow for discovering these datasets, loading them, exploring their structure, and using them effectively in your own code.</p>
-<p>The techniques you’ve learned form a practical foundation. They’re intentionally simple, reliable, and repeatable—exactly what you need when you’re building confidence with R. While there are additional ways to work with built‑in datasets, many of those alternatives require deeper knowledge of packages, environments, and memory management. Those tools can be powerful, but they also introduce nuances that sit beyond the scope of a beginner‑focused guide.</p>
-<p>By applying the workflow presented here, you’ll be able to handle the vast majority of tasks you’re likely to encounter—easily 80% of the work you’ll want to do with R’s built‑in datasets.</p>
-<p>Learning R is a process, and you’ve taken an important step by learning how to work with the datasets that come built into the language. These datasets are more than practice material—they’re a gateway to understanding how R thinks about data. With the foundation you’ve built, you’re ready to move confidently into the broader world of data analysis, visualization, and statistical modeling.</p>
+<p>Working with R’s built‑in datasets can feel surprisingly challenging when you’re just getting started. This book is designed to remove that friction.</p>
+<p>It won’t turn you into an expert overnight, but it <em>will</em> give you the practical skills you need to become confident and capable. Along the way, you’ll build a solid foundation that makes deeper exploration easy whenever you’re ready for it.</p>
+<p>The approach is simple: <strong>Show, then Tell</strong>. You’ll see each idea demonstrated in real code first, and only then will we break down how and why it works.</p>
+<section id="contents" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="contents"><span class="header-section-number">1.1</span> Contents</h2>
+<p>Chapters 1 - 4</p>
+<p>These chapters introduce the essentials of working with built‑in datasets, using examples from three popular R packages.</p>
+<p>You’ll learn how to find, load, and explore datasets so you can start working with them immediately.</p>
+<p>Chapter 5</p>
+<p>This chapter presents a streamlined workflow that ties together the techniques from earlier chapters.</p>
+<p>Think of it as a quick‑reference guide you can return to whenever you need a refresher.</p>
+<p>Chapter 6</p>
+<p>A bonus chapter that highlights several widely used datasets, explaining what makes them so popular and how they’re typically applied.</p>
+<p>You’ll also get another lean workflow to support your future work.</p>
+<p>Chapter 7</p>
+<p>The final chapter wraps up your learning and offers suggestions for where to go next as you continue building your R skills.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -575,11 +601,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./c060040.html" class="pagination-link" aria-label="diamonds dataset">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">diamonds dataset</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./c060030.html" class="pagination-link" aria-label="starwars dataset">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">starwars dataset</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

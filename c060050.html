@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ed Pal">
-<meta name="dcterms.date" content="2025-12-30">
 
-<title>R Built-in Datasets</title>
+<title>4&nbsp; datasets package – R Built-in Datasets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./introduction.html" rel="next">
+<link href="./conclusion.html" rel="next">
+<link href="./c060040.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./c060050.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -134,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./c060050.html" class="sidebar-item-text sidebar-link">
+  <a href="./c060050.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></span></a>
   </div>
 </li>
@@ -154,7 +188,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">4.1</span> Getting Started</a></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list"><span class="header-section-number">4.2</span> List</a></li>
+  <li><a href="#mtcars" id="toc-mtcars" class="nav-link" data-scroll-target="#mtcars"><span class="header-section-number">4.3</span> mtcars</a></li>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore"><span class="header-section-number">4.4</span> Explore</a>
+  <ul class="collapse">
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help"><span class="header-section-number">4.4.1</span> help()</a></li>
+  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head"><span class="header-section-number">4.4.2</span> head()</a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class"><span class="header-section-number">4.4.3</span> class()</a></li>
+  </ul></li>
+  <li><a href="#load" id="toc-load" class="nav-link" data-scroll-target="#load"><span class="header-section-number">4.5</span> Load</a></li>
+  <li><a href="#use" id="toc-use" class="nav-link" data-scroll-target="#use"><span class="header-section-number">4.6</span> Use</a></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up"><span class="header-section-number">4.7</span> Wrap-up</a>
+  <ul class="collapse">
+  <li><a href="#built-in" id="toc-built-in" class="nav-link" data-scroll-target="#built-in"><span class="header-section-number">4.7.1</span> Built-in</a></li>
+  <li><a href="#other-key-points" id="toc-other-key-points" class="nav-link" data-scroll-target="#other-key-points"><span class="header-section-number">4.7.2</span> Other key points</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -163,26 +212,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R Built-in Datasets</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ed Pal </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 30, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -192,13 +229,200 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Students learning R need accessible data to practice their coding skills. In theory, R provides this through its many built‑in datasets. In practice, however, working with these datasets isn’t always as simple as it sounds.</p>
-<p>I wrote this book to close this gap between theory and reality.</p>
-<p>R offers multiple ways to access and handle built-in datasets, and many of those approaches assume familiarity with packages, environments, and memory management—skills beginners typically haven’t developed yet. This book removes that early complexity by giving you a clear, guided path to the essential techniques for working confidently with R’s built‑in datasets.</p>
+<section id="getting-started" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">4.1</span> Getting Started</h2>
+<p>You now have experience working with datasets in the <strong>dplyr</strong> and <strong>ggplot2</strong> packages.</p>
+<p>What you learned reflects how datasets are accessed and used in most R packages. <em>This chapter focuses on an exception.</em></p>
+<p>Specifically, you will learn about the <strong>datasets</strong> package. As its name suggests, its primary purpose is to make a wide collection of built-in datasets easily accessible.</p>
+<p>In addition to supplying many datasets for exploration and practice, the <strong>datasets</strong> package provides the very useful <code>data()</code> function, which you have already seen in action.</p>
+<p>The <strong>datasets</strong> package is part of the base R installation. R emphasizes the value of the <strong>datasets</strong> package by making it available automatically every time an R session starts.</p>
+</section>
+<section id="list" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="list"><span class="header-section-number">4.2</span> List</h2>
+<p>If the datasets package is new to you, it’s best to first see what’s in it.v</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package =</span> <span class="st">"datasets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code above lists the datasets in the datasets package. The screenshot snippets below show parts of what’s displayed, including the <strong>mtcars</strong> dataset.</p>
+<p><img src="images/c060050_datasets_datasets_a.png" class="img-fluid"></p>
+<p><img src="images/c060050_datasets_mtcars.png" class="img-fluid"></p>
+<p><img src="images/c060050_datasets_datasets_z.png" class="img-fluid"></p>
+</section>
+<section id="mtcars" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="mtcars"><span class="header-section-number">4.3</span> mtcars</h2>
+<p>mtcars is a popular dataset.</p>
+<p>What’s shown below applies to all datasets available in the datasets package.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s <strong>important</strong> to realize working with mtcars is different in some ways from the workflow you saw for the starwars and diamonds datasets, which are contained in add-on packages.</p>
+<p><strong>Here’s whats important:</strong></p>
+<ol type="1">
+<li><p>The datasets package is part of the base R installation, meaning there’s no worry about needing to install it.</p></li>
+<li><p>R makes the datasets package available each time it starts a session.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="explore" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="explore"><span class="header-section-number">4.4</span> Explore</h2>
+<p>Recall, before you start using a dataset, it’s a best practice is to spend some time learning a bit about it.</p>
+<section id="help" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="help"><span class="header-section-number">4.4.1</span> help()</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"mtcars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>starting httpd help server ... done</code></pre>
+</div>
+</div>
+<p>When you run the code above, a new window titled “R: Motor Trend Car Road Tests” is opened. This window provides information about the structure and content of <code>mtcars</code>. It also shows code examples using <code>mtcars</code>. Here’s part of what you’ll see:</p>
+<p><img src="images/c060050_mtcars_help.png" class="img-fluid"></p>
+</section>
+<section id="head" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="head"><span class="header-section-number">4.4.2</span> head()</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div>
+<p>The code above shows the first six rows of mtcars.</p>
+</section>
+<section id="class" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="class"><span class="header-section-number">4.4.3</span> class()</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+</div>
+<p>The code above shows that mtcars is a traditional R data frame object, in contrast to starwars and diamonds, which are tibbles.</p>
+</section>
+</section>
+<section id="load" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="load"><span class="header-section-number">4.5</span> Load</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars, <span class="at">package =</span> <span class="st">"datasets"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>my_mtcars <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "mtcars"    "my_mtcars"</code></pre>
+</div>
+</div>
+<p>The code above loads a copy of mtcars into the global environment and makes a copy named my_mtcars.</p>
+</section>
+<section id="use" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="use"><span class="header-section-number">4.6</span> Use</h2>
+<p>Using my_mtcars in R code is straightforward.</p>
+<section id="base-r" class="level4" data-number="4.6.0.1">
+<h4 data-number="4.6.0.1" class="anchored" data-anchor-id="base-r"><span class="header-section-number">4.6.0.1</span> base R</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">rownames</span>(my_mtcars)[my_mtcars<span class="sc">$</span>cyl <span class="sc">==</span> <span class="dv">8</span>],</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  my_mtcars[my_mtcars<span class="sc">$</span>cyl <span class="sc">==</span> <span class="dv">8</span>, <span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>)]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                name  mpg cyl
+   Hornet Sportabout 18.7   8
+          Duster 360 14.3   8
+          Merc 450SE 16.4   8
+          Merc 450SL 17.3   8
+         Merc 450SLC 15.2   8
+  Cadillac Fleetwood 10.4   8
+ Lincoln Continental 10.4   8
+   Chrysler Imperial 14.7   8
+    Dodge Challenger 15.5   8
+         AMC Javelin 15.2   8
+          Camaro Z28 13.3   8
+    Pontiac Firebird 19.2   8
+      Ford Pantera L 15.8   8
+       Maserati Bora 15.0   8</code></pre>
+</div>
+</div>
+<p>The code above selects a few columns and filters for rows where the engine has 8 cylinders.</p>
+</section>
+<section id="dplyr" class="level4" data-number="4.6.0.2">
+<h4 data-number="4.6.0.2" class="anchored" data-anchor-id="dplyr"><span class="header-section-number">4.6.0.2</span> dplyr</h4>
+<p>Even though datasets in the <strong>datasets package</strong> are often used for learning base R, keep in mind their value for learning functions in many packages, such as dplyr.</p>
+<p>First, make dplyr available to the session.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, you can use dplyr functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_mtcars_df <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rownames_to_column</span>(<span class="at">var =</span> <span class="st">"name"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>result_dplyr <span class="ot">&lt;-</span> my_mtcars_df <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, mpg, cyl)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result_dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  name  mpg cyl
+1    Hornet Sportabout 18.7   8
+2           Duster 360 14.3   8
+3           Merc 450SE 16.4   8
+4           Merc 450SL 17.3   8
+5          Merc 450SLC 15.2   8
+6   Cadillac Fleetwood 10.4   8
+7  Lincoln Continental 10.4   8
+8    Chrysler Imperial 14.7   8
+9     Dodge Challenger 15.5   8
+10         AMC Javelin 15.2   8
+11          Camaro Z28 13.3   8
+12    Pontiac Firebird 19.2   8
+13      Ford Pantera L 15.8   8
+14       Maserati Bora 15.0   8</code></pre>
+</div>
+</div>
+<p>The code above this time uses dplyr functions, creating the same results.</p>
+</section>
+</section>
+<section id="wrap-up" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="wrap-up"><span class="header-section-number">4.7</span> Wrap-up</h2>
+<section id="built-in" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="built-in"><span class="header-section-number">4.7.1</span> Built-in</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There’s variation within the R community regarding the use of the term “built-in” as it relates to discussing datasets contained in R packages.</p>
+<p>The most strict interpretation is that only datasets contained in the datasets package should be called “built-in” since the datasets packages comes with base R and this package is automatically made available (loaded and added to the search path) each time an R session starts up. This interpretation also sometime refers to datasets contained in other packages as “package-specific” datasets.</p>
+<p>An increasing common, more liberal, interprentation of “built-in” is that datasets contain in any R package can be referred to as “built-in” since it is literally built into the package. This book uses this more open interpretation.</p>
+</div>
+</div>
+</section>
+<section id="other-key-points" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="other-key-points"><span class="header-section-number">4.7.2</span> Other key points</h3>
+<ul>
+<li><p>The datasets package is unique among R packages.</p></li>
+<li><p>Its primary purpose is to provide datasets for learning and practicing R.</p></li>
+<li><p>The datasets package is installed with R and is automatically available in every R session.</p></li>
+<li><p>The datasets package provides the data() function, which can be used with any package to load a dataset into the global environment</p></li>
+<li><p>You can also use data() to list the publicly available datasets contained in a package.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -603,10 +827,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./c060040.html" class="pagination-link" aria-label="diamonds dataset">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">diamonds dataset</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./introduction.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./conclusion.html" class="pagination-link" aria-label="Conclusion">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

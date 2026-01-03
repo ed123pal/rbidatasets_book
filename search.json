@@ -10,8 +10,8 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
+    "objectID": "introduction.html",
+    "href": "introduction.html",
     "title": "1  Introduction",
     "section": "",
     "text": "1.1 Contents\nWorking with R’s built‑in datasets can feel surprisingly challenging when you’re just getting started. This book is designed to remove that friction.\nIt won’t turn you into an expert overnight, but it will give you the practical skills you need to become confident and capable. Along the way, you’ll build a solid foundation that makes deeper exploration easy whenever you’re ready for it.\nThe approach is simple: Show, then Tell. You’ll see each idea demonstrated in real code first, and only then will we break down how and why it works.\nChapters 1 - 4\nThese chapters introduce the essentials of working with built‑in datasets, using examples from three popular R packages.\nYou’ll learn how to find, load, and explore datasets so you can start working with them immediately.\nChapter 5\nThis chapter presents a streamlined workflow that ties together the techniques from earlier chapters.\nThink of it as a quick‑reference guide you can return to whenever you need a refresher.\nChapter 6\nA bonus chapter that highlights several widely used datasets, explaining what makes them so popular and how they’re typically applied.\nYou’ll also get another lean workflow to support your future work.\nChapter 7\nThe final chapter wraps up your learning and offers suggestions for where to go next as you continue building your R skills.",
@@ -24,14 +24,14 @@
     "href": "c060030.html",
     "title": "2  starwars dataset",
     "section": "",
-    "text": "2.1 Introduction\nThink of this as your jump-start chapter. We’ll cover the essential definitions and walk through simple code snippets so you can start working with built-in datasets right away.",
+    "text": "2.1 Getting Started\nThink of this as your jump-start chapter. We’ll cover the essential definitions and walk through simple code snippets so you can start working with built-in datasets right away.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>starwars dataset</span>"
     ]
   },
   {
-    "objectID": "c060030.html#introduction",
-    "href": "c060030.html#introduction",
+    "objectID": "c060030.html#getting-started",
+    "href": "c060030.html#getting-started",
     "title": "2  starwars dataset",
     "section": "",
     "text": "2.1.1 built-in\nWhen you think of an R package, you’re most likely interested in the functions it contains.\nWhile functions are essential to R, be aware that many packages also contain datasets that you can use to practice R coding. Because these datasets are part of a package, they’re sometimes referred to as built-in.\nThe starwars dataset contained in the dplyr package is popular.",
@@ -124,14 +124,14 @@
     "href": "c060040.html",
     "title": "3  diamonds dataset",
     "section": "",
-    "text": "3.1 Introduction\nThis chapter builds on the concepts introduced in the previous chapter by providing additional practice with another well-known built-in dataset.\nIn this chapter, we work with the diamonds dataset from the ggplot2 package. Although this dataset is commonly used to create engaging data visualizations, it’s also widely used for practicing general R coding skills.",
+    "text": "3.1 Getting Started\nThis chapter builds on the concepts introduced in the previous chapter by providing additional practice with another well-known built-in dataset.\nIn this chapter, we work with the diamonds dataset from the ggplot2 package. Although this dataset is commonly used to create engaging data visualizations, it’s also widely used for practicing general R coding skills.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
     ]
   },
   {
-    "objectID": "c060040.html#introduction",
-    "href": "c060040.html#introduction",
+    "objectID": "c060040.html#getting-started",
+    "href": "c060040.html#getting-started",
     "title": "3  diamonds dataset",
     "section": "",
     "text": "Note\n\n\n\nFor brevity, some of the coding details required to access and use diamonds are not explained in detail as they were in the prior chapter.",
@@ -144,19 +144,139 @@
     "href": "c060040.html#load",
     "title": "3  diamonds dataset",
     "section": "3.2 Load",
-    "text": "3.2 Load\nThe steps below will load diamonds into the global environment.\n\n3.2.1 Installed\nConfirm ggplot2 is installed. If not, do so.",
+    "text": "3.2 Load\nThe steps below will load diamonds into the global environment.\n\n3.2.1 Installed\nConfirm ggplot2 is installed. If not, do so.\n\n\n3.2.2 Access\n\ndata(diamonds, package = \"ggplot2\")\nmy_diamonds&lt;- diamonds\nls()\n\n[1] \"diamonds\"    \"my_diamonds\"\n\n\nThe code above puts diamonds into the global environment.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
     ]
   },
   {
-    "objectID": "wrap_up.html",
-    "href": "wrap_up.html",
-    "title": "4  Wrap-up",
+    "objectID": "c060040.html#explore",
+    "href": "c060040.html#explore",
+    "title": "3  diamonds dataset",
+    "section": "3.3 Explore",
+    "text": "3.3 Explore\n\n3.3.1 help()\n\nhelp(\"diamonds\", package = \"ggplot2\")\n\nstarting httpd help server ... done\n\n\n\n\n\n3.3.2 class()\nAnother important function to use right away is class().\n\nclass(diamonds)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html#use",
+    "href": "c060040.html#use",
+    "title": "3  diamonds dataset",
+    "section": "3.4 Use",
+    "text": "3.4 Use\nOnce a dataset is in the global environment, it can be read or updated.\n\ndiamonds_subset &lt;- diamonds[\n  diamonds$cut %in% c(\"Fair\", \"Ideal\"), # Filter rows\n  c(\"cut\", \"price\", \"carat\")                     # Select columns\n]\nhead(diamonds_subset)\n\n     cut price carat\n1  Ideal   326  0.23\n9   Fair   337  0.22\n12 Ideal   340  0.23\n14 Ideal   344  0.31\n17 Ideal   348  0.30\n40 Ideal   403  0.33\n\n\nThe code above uses base R functions to create a new tibble named diamonds_subset, which contains information only for Fair and Ideal cut diamonds.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html#ggplot2",
+    "href": "c060040.html#ggplot2",
+    "title": "3  diamonds dataset",
+    "section": "3.5 ggplot2",
+    "text": "3.5 ggplot2\nSo far, the diamonds dataset has been used to practice coding with base R functions, but now let’s go further to use it for some data visualization work.\nRecall that earlier the data() function was used to access just the diamonds dataset, but to do plotting we’ll need to make the entire ggplot2 package available to the session.\n\n3.5.1 library()\n\nlibrary(ggplot2)\n\nThe code above runs the library() function on ggplot2, making the entire package available to the session.\n\n\n3.5.2 ggplot\n\nggplot(data = diamonds_subset, aes(x = carat, y = price, color = cut)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(\n    title = \"Price vs. Carat for Fair and Ideal Cut Diamonds\",\n    subtitle = \"Data from the built-in 'diamonds' dataset\",\n    x = \"Carat Weight\",\n    y = \"Price (USD)\",\n    color = \"Diamond Cut\"\n  ) +\n  theme_minimal() +\n  scale_color_manual(values = c(\"Fair\" = \"red\", \"Ideal\" = \"blue\"))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThe code above uses the ggplot() function to plot data from the diamonds_subset tibble.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html#list-datasets",
+    "href": "c060040.html#list-datasets",
+    "title": "3  diamonds dataset",
+    "section": "3.6 List datasets",
+    "text": "3.6 List datasets\nSee what other datasets are available in ggplot2.\n\ndata(package = \"ggplot2\")",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060040.html#wrap-up",
+    "href": "c060040.html#wrap-up",
+    "title": "3  diamonds dataset",
+    "section": "3.7 Wrap-Up",
+    "text": "3.7 Wrap-Up\n\nYou have now seen examples of packages that include a small number of built-in datasets.\nThe dplyr and ggplot2 packages play a central role in modern R workflows, and their built-in datasets are widely used for learning and practicing the functions they provide.\nBuilt-in datasets from packages are also useful for practicing base R functions, not just package-specific tools.\nThe data() function serves two main purposes:\n\nLoading a dataset into the global environment\nListing the datasets that are available in a package",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>diamonds dataset</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html",
+    "href": "c060050.html",
+    "title": "4  datasets package",
+    "section": "",
+    "text": "4.1 Getting Started\nYou now have experience working with datasets in the dplyr and ggplot2 packages.\nWhat you learned reflects how datasets are accessed and used in most R packages. This chapter focuses on an exception.\nSpecifically, you will learn about the datasets package. As its name suggests, its primary purpose is to make a wide collection of built-in datasets easily accessible.\nIn addition to supplying many datasets for exploration and practice, the datasets package provides the very useful data() function, which you have already seen in action.\nThe datasets package is part of the base R installation. R emphasizes the value of the datasets package by making it available automatically every time an R session starts.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html#list",
+    "href": "c060050.html#list",
+    "title": "4  datasets package",
+    "section": "4.2 List",
+    "text": "4.2 List\nIf the datasets package is new to you, it’s best to first see what’s in it.v\n\ndata(package = \"datasets\")\n\nThe code above lists the datasets in the datasets package. The screenshot snippets below show parts of what’s displayed, including the mtcars dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html#mtcars",
+    "href": "c060050.html#mtcars",
+    "title": "4  datasets package",
+    "section": "4.3 mtcars",
+    "text": "4.3 mtcars\nmtcars is a popular dataset.\nWhat’s shown below applies to all datasets available in the datasets package.\n\n\n\n\n\n\nNote\n\n\n\nIt’s important to realize working with mtcars is different in some ways from the workflow you saw for the starwars and diamonds datasets, which are contained in add-on packages.\nHere’s whats important:\n\nThe datasets package is part of the base R installation, meaning there’s no worry about needing to install it.\nR makes the datasets package available each time it starts a session.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html#explore",
+    "href": "c060050.html#explore",
+    "title": "4  datasets package",
+    "section": "4.4 Explore",
+    "text": "4.4 Explore\nRecall, before you start using a dataset, it’s a best practice is to spend some time learning a bit about it.\n\n4.4.1 help()\n\nhelp(\"mtcars\")\n\nstarting httpd help server ... done\n\n\nWhen you run the code above, a new window titled “R: Motor Trend Car Road Tests” is opened. This window provides information about the structure and content of mtcars. It also shows code examples using mtcars. Here’s part of what you’ll see:\n\n\n\n4.4.2 head()\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\nThe code above shows the first six rows of mtcars.\n\n\n4.4.3 class()\n\nclass(mtcars)\n\n[1] \"data.frame\"\n\n\nThe code above shows that mtcars is a traditional R data frame object, in contrast to starwars and diamonds, which are tibbles.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html#load",
+    "href": "c060050.html#load",
+    "title": "4  datasets package",
+    "section": "4.5 Load",
+    "text": "4.5 Load\n\ndata(mtcars, package = \"datasets\")\nmy_mtcars &lt;- mtcars\nls()\n\n[1] \"mtcars\"    \"my_mtcars\"\n\n\nThe code above loads a copy of mtcars into the global environment and makes a copy named my_mtcars.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html#use",
+    "href": "c060050.html#use",
+    "title": "4  datasets package",
+    "section": "4.6 Use",
+    "text": "4.6 Use\nUsing my_mtcars in R code is straightforward.\n\n4.6.0.1 base R\n\nresult &lt;- data.frame(\n  name = rownames(my_mtcars)[my_mtcars$cyl == 8],\n  my_mtcars[my_mtcars$cyl == 8, c(\"mpg\", \"cyl\")]\n)\nprint(result, row.names = FALSE)\n\n                name  mpg cyl\n   Hornet Sportabout 18.7   8\n          Duster 360 14.3   8\n          Merc 450SE 16.4   8\n          Merc 450SL 17.3   8\n         Merc 450SLC 15.2   8\n  Cadillac Fleetwood 10.4   8\n Lincoln Continental 10.4   8\n   Chrysler Imperial 14.7   8\n    Dodge Challenger 15.5   8\n         AMC Javelin 15.2   8\n          Camaro Z28 13.3   8\n    Pontiac Firebird 19.2   8\n      Ford Pantera L 15.8   8\n       Maserati Bora 15.0   8\n\n\nThe code above selects a few columns and filters for rows where the engine has 8 cylinders.\n\n\n4.6.0.2 dplyr\nEven though datasets in the datasets package are often used for learning base R, keep in mind their value for learning functions in many packages, such as dplyr.\nFirst, make dplyr available to the session.\n\nlibrary(dplyr)\n\nNow, you can use dplyr functions.\n\nmy_mtcars_df &lt;- mtcars %&gt;%\n  tibble::rownames_to_column(var = \"name\")\nresult_dplyr &lt;- my_mtcars_df %&gt;%\n  filter(cyl == 8) %&gt;%\n  select(name, mpg, cyl)\nprint(result_dplyr)\n\n                  name  mpg cyl\n1    Hornet Sportabout 18.7   8\n2           Duster 360 14.3   8\n3           Merc 450SE 16.4   8\n4           Merc 450SL 17.3   8\n5          Merc 450SLC 15.2   8\n6   Cadillac Fleetwood 10.4   8\n7  Lincoln Continental 10.4   8\n8    Chrysler Imperial 14.7   8\n9     Dodge Challenger 15.5   8\n10         AMC Javelin 15.2   8\n11          Camaro Z28 13.3   8\n12    Pontiac Firebird 19.2   8\n13      Ford Pantera L 15.8   8\n14       Maserati Bora 15.0   8\n\n\nThe code above this time uses dplyr functions, creating the same results.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "c060050.html#wrap-up",
+    "href": "c060050.html#wrap-up",
+    "title": "4  datasets package",
+    "section": "4.7 Wrap-up",
+    "text": "4.7 Wrap-up\n\n4.7.1 Built-in\n\n\n\n\n\n\nNote\n\n\n\nThere’s variation within the R community regarding the use of the term “built-in” as it relates to discussing datasets contained in R packages.\nThe most strict interpretation is that only datasets contained in the datasets package should be called “built-in” since the datasets packages comes with base R and this package is automatically made available (loaded and added to the search path) each time an R session starts up. This interpretation also sometime refers to datasets contained in other packages as “package-specific” datasets.\nAn increasing common, more liberal, interprentation of “built-in” is that datasets contain in any R package can be referred to as “built-in” since it is literally built into the package. This book uses this more open interpretation.\n\n\n\n\n4.7.2 Other key points\n\nThe datasets package is unique among R packages.\nIts primary purpose is to provide datasets for learning and practicing R.\nThe datasets package is installed with R and is automatically available in every R session.\nThe datasets package provides the data() function, which can be used with any package to load a dataset into the global environment\nYou can also use data() to list the publicly available datasets contained in a package.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>datasets package</span>"
+    ]
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "5  Conclusion",
     "section": "",
     "text": "R’s built‑in datasets provide an ideal starting point for learning the language. They’re accessible, well‑documented, and designed to help you practice real data‑analysis skills. Throughout this book, the goal has been to give you a clear, consistent workflow for discovering these datasets, loading them, exploring their structure, and using them effectively in your own code.\nThe techniques you’ve learned form a practical foundation. They’re intentionally simple, reliable, and repeatable—exactly what you need when you’re building confidence with R. While there are additional ways to work with built‑in datasets, many of those alternatives require deeper knowledge of packages, environments, and memory management. Those tools can be powerful, but they also introduce nuances that sit beyond the scope of a beginner‑focused guide.\nBy applying the workflow presented here, you’ll be able to handle the vast majority of tasks you’re likely to encounter—easily 80% of the work you’ll want to do with R’s built‑in datasets.\nLearning R is a process, and you’ve taken an important step by learning how to work with the datasets that come built into the language. These datasets are more than practice material—they’re a gateway to understanding how R thinks about data. With the foundation you’ve built, you’re ready to move confidently into the broader world of data analysis, visualization, and statistical modeling.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Wrap-up</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
     ]
   }
 ]

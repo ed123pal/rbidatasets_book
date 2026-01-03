@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./wrap_up.html" rel="next">
+<link href="./c060050.html" rel="next">
 <link href="./c060030.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -115,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -133,8 +168,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wrap_up.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Wrap-up</span></span></a>
+  <a href="./c060050.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
     </ul>
@@ -147,11 +188,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">3.1</span> Getting Started</a></li>
   <li><a href="#load" id="toc-load" class="nav-link" data-scroll-target="#load"><span class="header-section-number">3.2</span> Load</a>
   <ul class="collapse">
   <li><a href="#installed" id="toc-installed" class="nav-link" data-scroll-target="#installed"><span class="header-section-number">3.2.1</span> Installed</a></li>
+  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access"><span class="header-section-number">3.2.2</span> Access</a></li>
   </ul></li>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore"><span class="header-section-number">3.3</span> Explore</a>
+  <ul class="collapse">
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help"><span class="header-section-number">3.3.1</span> help()</a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class"><span class="header-section-number">3.3.2</span> class()</a></li>
+  </ul></li>
+  <li><a href="#use" id="toc-use" class="nav-link" data-scroll-target="#use"><span class="header-section-number">3.4</span> Use</a></li>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">3.5</span> ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#library" id="toc-library" class="nav-link" data-scroll-target="#library"><span class="header-section-number">3.5.1</span> library()</a></li>
+  <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot"><span class="header-section-number">3.5.2</span> ggplot</a></li>
+  </ul></li>
+  <li><a href="#list-datasets" id="toc-list-datasets" class="nav-link" data-scroll-target="#list-datasets"><span class="header-section-number">3.6</span> List datasets</a></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up"><span class="header-section-number">3.7</span> Wrap-Up</a></li>
   </ul>
 </nav>
     </div>
@@ -177,8 +232,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
+<section id="getting-started" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">3.1</span> Getting Started</h2>
 <p>This chapter builds on the concepts introduced in the previous chapter by providing additional practice with another well-known built-in dataset.</p>
 <p>In this chapter, we work with the <code>diamonds</code> dataset from the <strong>ggplot2</strong> package. Although this dataset is commonly used to create engaging data visualizations, it’s also widely used for practicing general R coding skills.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -201,9 +256,126 @@ Note
 <section id="installed" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="installed"><span class="header-section-number">3.2.1</span> Installed</h3>
 <p>Confirm ggplot2 is installed. If not, do so.</p>
-
-
 </section>
+<section id="access" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="access"><span class="header-section-number">3.2.2</span> Access</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds, <span class="at">package =</span> <span class="st">"ggplot2"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_diamonds<span class="ot">&lt;-</span> diamonds</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "diamonds"    "my_diamonds"</code></pre>
+</div>
+</div>
+<p>The code above puts diamonds into the global environment.</p>
+</section>
+</section>
+<section id="explore" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="explore"><span class="header-section-number">3.3</span> Explore</h2>
+<section id="help" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="help"><span class="header-section-number">3.3.1</span> help()</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"diamonds"</span>, <span class="at">package =</span> <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>starting httpd help server ... done</code></pre>
+</div>
+</div>
+<p><img src="images/c060040_help_diamonds.png" class="img-fluid"></p>
+</section>
+<section id="class" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="class"><span class="header-section-number">3.3.2</span> class()</h3>
+<p>Another important function to use right away is class().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="use" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="use"><span class="header-section-number">3.4</span> Use</h2>
+<p>Once a dataset is in the global environment, it can be read or updated.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>diamonds_subset <span class="ot">&lt;-</span> diamonds[</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  diamonds<span class="sc">$</span>cut <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Fair"</span>, <span class="st">"Ideal"</span>), <span class="co"># Filter rows</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"cut"</span>, <span class="st">"price"</span>, <span class="st">"carat"</span>)                     <span class="co"># Select columns</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds_subset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     cut price carat
+1  Ideal   326  0.23
+9   Fair   337  0.22
+12 Ideal   340  0.23
+14 Ideal   344  0.31
+17 Ideal   348  0.30
+40 Ideal   403  0.33</code></pre>
+</div>
+</div>
+<p>The code above uses base R functions to create a new tibble named diamonds_subset, which contains information only for Fair and Ideal cut diamonds.</p>
+</section>
+<section id="ggplot2" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">3.5</span> ggplot2</h2>
+<p>So far, the diamonds dataset has been used to practice coding with base R functions, but now let’s go further to use it for some data visualization work.</p>
+<p>Recall that earlier the data() function was used to access just the diamonds dataset, but to do plotting we’ll need to make the entire ggplot2 package available to the session.</p>
+<section id="library" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="library"><span class="header-section-number">3.5.1</span> library()</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code above runs the library() function on ggplot2, making the entire package available to the session.</p>
+</section>
+<section id="ggplot" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="ggplot"><span class="header-section-number">3.5.2</span> ggplot</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds_subset, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Price vs. Carat for Fair and Ideal Cut Diamonds"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Data from the built-in 'diamonds' dataset"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Carat Weight"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Price (USD)"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Diamond Cut"</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Fair"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"Ideal"</span> <span class="ot">=</span> <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="c060040_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The code above uses the ggplot() function to plot data from the diamonds_subset tibble.</p>
+</section>
+</section>
+<section id="list-datasets" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="list-datasets"><span class="header-section-number">3.6</span> List datasets</h2>
+<p>See what other datasets are available in ggplot2.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package =</span> <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/c060040_ggplot2_datasets.png" class="img-fluid"></p>
+</section>
+<section id="wrap-up" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="wrap-up"><span class="header-section-number">3.7</span> Wrap-Up</h2>
+<ul>
+<li><p>You have now seen examples of packages that include a small number of built-in datasets.</p></li>
+<li><p>The dplyr and ggplot2 packages play a central role in modern R workflows, and their built-in datasets are widely used for learning and practicing the functions they provide.</p></li>
+<li><p>Built-in datasets from packages are also useful for practicing base R functions, not just package-specific tools.</p></li>
+<li><p>The data() function serves two main purposes:</p>
+<ul>
+<li><p>Loading a dataset into the global environment</p></li>
+<li><p>Listing the datasets that are available in a package</p></li>
+</ul></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -613,8 +785,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./wrap_up.html" class="pagination-link" aria-label="Wrap-up">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Wrap-up</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./c060050.html" class="pagination-link" aria-label="datasets package">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
