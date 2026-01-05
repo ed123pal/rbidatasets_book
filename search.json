@@ -2,9 +2,39 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "R Built-in Datasets",
+    "title": "R Built-in Datasets: Basic Concepts",
     "section": "",
-    "text": "Preface\nStudents learning R need accessible data to practice their coding skills. In theory, R provides this through its many built‑in datasets. In practice, however, working with these datasets isn’t always as simple as it sounds.\nI wrote this book to close this gap between theory and reality.\nR offers multiple ways to access and handle built-in datasets, and many of those approaches assume familiarity with packages, environments, and memory management—skills beginners typically haven’t developed yet. This book removes that early complexity by giving you a clear, guided path to the essential techniques for working confidently with R’s built‑in datasets.",
+    "text": "Welcome\nWelcome and thank you for reading R Built-in Datasets: Basic Concepts.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#feedback",
+    "href": "index.html#feedback",
+    "title": "R Built-in Datasets: Basic Concepts",
+    "section": "Feedback",
+    "text": "Feedback\nPlease share your feedback about this book. Your comments and suggestions for improvement will be appreciated. Just drop me note at ed123pal@gmail.com.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#use",
+    "href": "index.html#use",
+    "title": "R Built-in Datasets: Basic Concepts",
+    "section": "Use",
+    "text": "Use\nTODO",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Preface",
+    "section": "",
+    "text": "Students learning R need accessible data to practice their coding skills. In theory, R provides this through its many built‑in datasets. In practice, however, working with these datasets isn’t always as simple as it sounds.\nI wrote this book to close this gap between theory and reality.\nR offers multiple ways to access and handle built-in datasets, and many of those approaches assume familiarity with packages, environments, and memory management—skills beginners typically haven’t developed yet. This book removes that early complexity by giving you a clear, guided path to the essential techniques for working confidently with R’s built‑in datasets.",
     "crumbs": [
       "Preface"
     ]
@@ -270,13 +300,123 @@
     ]
   },
   {
+    "objectID": "c060060.html",
+    "href": "c060060.html",
+    "title": "5  Workflow",
+    "section": "",
+    "text": "5.1 Getting Started\nThis chapter shows a built-in dataset workflow based on key points previously presented.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "c060060.html#identify",
+    "href": "c060060.html#identify",
+    "title": "5  Workflow",
+    "section": "5.2 Identify",
+    "text": "5.2 Identify\nDecide on the dataset you want to use and which package it’s in.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "c060060.html#installed",
+    "href": "c060060.html#installed",
+    "title": "5  Workflow",
+    "section": "5.3 Installed",
+    "text": "5.3 Installed\nCheck if the package is installed. If not install it.\ninstall.packages(“packagename”)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "c060060.html#load",
+    "href": "c060060.html#load",
+    "title": "5  Workflow",
+    "section": "5.4 Load",
+    "text": "5.4 Load\nRun data() to put the dataset in the global environment.\ndata(datasetname, package = “packagename”)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "c060060.html#explore",
+    "href": "c060060.html#explore",
+    "title": "5  Workflow",
+    "section": "5.5 Explore",
+    "text": "5.5 Explore\nRun functions to explore the dataset.\nMake a copy of the dataset and use the copy.\nmy_datasetname &lt;- datasetname",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "c060060.html#wrap-up",
+    "href": "c060060.html#wrap-up",
+    "title": "5  Workflow",
+    "section": "6.1 Wrap-up",
+    "text": "6.1 Wrap-up\nThis bare-bones workflow will likely handle 80% of what you’ll need to do with built-in datasets.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Workflow</span>"
+    ]
+  },
+  {
+    "objectID": "c060070.html",
+    "href": "c060070.html",
+    "title": "6  Popular datasets",
+    "section": "",
+    "text": "6.1 Getting started\nYou’ll often discover datasets through tutorials, course materials, or recommendations from others. If those sources aren’t enough, you may also search for datasets online or use your favorite large language model to suggest options.\nWhen choosing a dataset, it’s useful to first consider where it comes from. Some datasets are included in the base R installation, while others are provided by add-on packages that must be installed separately. In particular, datasets in the datasets package are a good place to start, since this package is installed with R and is immediately available in every R session.\nTo help you get started, this chapter introduces several built-in datasets from the datasets package, along with a few examples from commonly used add-on packages. These datasets are well suited for learning and practicing R programming concepts.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Popular datasets</span>"
+    ]
+  },
+  {
+    "objectID": "c060070.html#datasets-package",
+    "href": "c060070.html#datasets-package",
+    "title": "6  Popular datasets",
+    "section": "6.2 datasets package",
+    "text": "6.2 datasets package\nWhile official usage statistics for the built-in datasets are not published. The datasets shown below are generally considered as popular based on their frequent appearance in R tutorials, examples, and statistical literature.\n\n6.2.1 iris\nDescription: This classic dataset, introduced by Sir Ronald Fisher, contains measurements in centimeters of the sepal length, sepal width, petal length, and petal width for 50 flowers from each of three species of iris: Iris setosa, versicolor, and virginica.\nPopularity: It is arguably the most famous dataset in machine learning and statistics, widely used for introducing classification problems and concepts like cluster analysis.\n\n\n6.2.2 mtcars\nDescription: This dataset comprises fuel consumption and 10 other aspects of automobile design and performance for 32 automobiles (1973–74 models) from the 1974 Motor Trend US magazine.\nPopularity: It’s frequently used for illustrating regression analysis (especially multiple linear regression) and comparisons between different car characteristics.\n\n\n6.2.3 USArrests\nDescription: This data set contains statistics about violent crime rates (Murder, Assault, and Rape) in each of the 50 US states in 1973, along with the percentage of the urban population.\nPopularity: It’s a common example for demonstrating principal component analysis (PCA), cluster analysis, and other multivariate statistical techniques.\n\n\n6.2.4 airquality\nDescription: This dataset provides daily air quality measurements in New York City from May to September 1973, including Ozone, Solar Radiation, Wind, and Temperature.\nPopularity: It’s often used for learning about handling missing data (NA values), basic data exploration, and simple time-series analysis.\n\n\n6.2.5 AirPassengers\nDescription: A classic time-series dataset recording the monthly total number of international airline passengers from 1949 to 1960.\nPopularity: It’s an essential dataset for introducing time series analysis, including concepts like trend, seasonality, and forecasting models like ARIMA.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Popular datasets</span>"
+    ]
+  },
+  {
+    "objectID": "c060070.html#recommended-packages",
+    "href": "c060070.html#recommended-packages",
+    "title": "6  Popular datasets",
+    "section": "6.3 Recommended packages",
+    "text": "6.3 Recommended packages\nSome packages that come with the standard R installation are not automatically loaded when an R session starts up. These packages are referred to as “recommended packages”. They are high-quality, widely-used packages the R Core Team consideres essential for most users. The MASS package is a famous example of this type of package. Others include lattice, mgcv and nlme. Below are details about MASS.\n\n6.3.1 MASS\nHere, I want to point out the MASS package because there’s sometimes confusion about this package for a couple of reasons.\nSometimes, people will refer to the MASS dataset, but it’s a package that contains datasets. This is similar to how the datasets package contains many datasets.\nBe aware though, the MASS package contains many modern versions of functions that were previously used from the base R stats package. Think of stats as the standard toolbox and MASS as the professional upgrade—designed to handle messy, real-world data that violates the strict assumptions of classical statistics.\nThe MASS package is a recommended package, meaning it’s installed with base R, but you’ll need to run library(MASS) to make it available to your R session.\nBelow a few of the most frequently used MASS datasets:\n\nCars93: Data on 93 car models from 1993.\nmammals: Brain and body weights for 62 species of land mammals.\nbirthwt: Risk factors associated with low infant birth weight.\ncrabs: Morphological measurements of Leptograpsus crabs.\n\n\n\n\n\n\n\nNote\n\n\n\nThe Boston dataset was historically the most famous MASS dataset, but it was removed due to ethical concerns regarding the use of variables involving racial proportions. If needed, it can be found in the ISLR2 and spdep packages.\nI’ve included this callout to draw attention that it’s sometimes appropriate to consider the sournce and content of data in built-in datasets.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Popular datasets</span>"
+    ]
+  },
+  {
+    "objectID": "c060070.html#add-on-packages",
+    "href": "c060070.html#add-on-packages",
+    "title": "6  Popular datasets",
+    "section": "6.4 Add-on packages",
+    "text": "6.4 Add-on packages\nPackages that are not categorized as “base” or “recommened” are referred to as add-on packages. These packages are not part of the standard R installation. The most likely source for these packages is CRAN, but some are sourced from other places such as Bioconductor or various GitHub repositories.\nBased on use patterns in multiple learning resources, several datasets contained in R add-on packages, such as the ones listed below, are also very popular.\n\n6.4.1 penguins\nPackage: palmerpenguins\nDescription: Size measurements (bill length, bill depth, flipper length, body mass) for 344 penguins representing three species (Adélie, Chinstrap, and Gentoo) from three islands in the Palmer Archipelago, Antarctica.\nPopularity: It was specifically designed as a modern, more ethically sound, and approachable replacement for the iris dataset. It is popular because it includes missing values (NAs) and more obvious species clusters, making it perfect for teaching data cleaning and visualization.\n\n\n6.4.2 diamonds\nPackage: ggplot2\nDescription: This dataset contains the prices and other attributes (carat, cut, color, clarity, and dimensions) of nearly 54,000 round-cut diamonds.\nPopularity: It is the primary dataset used to teach ggplot2. Because of its relatively large size (~54k rows), it is excellent for showing how to handle overplotting, identifying non-linear relationships, and demonstrating the impact of categorical variables on price.\n\n\n6.4.3 flights\nPackage: nycflights13\nDescription: On-time data for all 336,776 flights that departed from New York City (JFK, LGA, EWR) in 2013. It is often used alongside other tables in the package like weather, planes, and airports.\nPopularity: It is the “go-to” dataset for teaching data wrangling with dplyr. Its massive scale and relational structure (requiring joins between different tables) make it ideal for learning how to manipulate, filter, and summarize complex real-world data.\n\n\n6.4.4 gapminder\nPackage: gapminder\nDescription: An excerpt of the Gapminder data on life expectancy, GDP per capita, and population by country and continent over time (from 1952 to 2007 in increments of 5 years).\nPopularity: Made famous by Hans Rosling’s TED talks, this dataset is widely used to teach time-series visualization and animation (using gganimate). It helps users understand how to map aesthetics like size and color to multiple dimensions of data.\n\n\n6.4.5 ISLR\nPackages: ISLR and ISLR2\nDescription: Wage and other health/demographic data for 3,000 male workers in the Mid-Atlantic region of the US.\nPopularity: As the companion dataset for the influential book An Introduction to Statistical Learning, it is the standard for teaching regression modeling, splines, and cross-validation. It provides a realistic scenario for predicting a continuous variable (income) using a mix of numerical and categorical predictors.\n\n\n6.4.6 starwars\nWhile the starwars dataset is technically an add-on dataset, it can also be referred to as a “special-interest” dataset.\nSometimes you’ll be drawn to a specific add-on dataset due to special personal or professional interests. For example, many people became fans of the Starwars franchise early in life so working with data about its characters is fun for them as adults.\n\n\n\n\n\n\nNote\n\n\n\nInformation is given below for two special-interest datasets. Significant details are provided here as an example of how an LLM (in this case Gemini) can be used to provide a detailed description a dataset.\n\n\nPackage:\ndplyr\nDescription:\nThe starwars dataset is a tibble (a modern version of a data frame) containing information on characters from the Star Wars films. It includes 14 variables:\nPhysical Traits: Name, height (cm), mass (kg), hair color, skin color, and eye color.\nDemographics: Birth year, biological sex, gender, and homeworld.\nSpecies: The species of the character (e.g., Human, Droid, Wookiee).\nList-Columns: This is its most unique feature. It contains three columns—films, vehicles, and starships—where each “cell” actually contains a list of items rather than a single value.\nPopularity:\nThe starwars dataset isn’t just popular because people like the movies; it is strategically designed to teach modern data science workflows that older datasets like iris simply cannot handle.\nTeaching “List-Columns”\nMost traditional datasets are “flat” (one value per cell). However, in the real world, data is often nested (like JSON). Because a character like Obi-Wan Kenobi appears in multiple films and flies multiple starships, those columns contain lists. This makes starwars the gold standard for teaching the nest(), unnest(), and purrr map functions.\nMastering Categorical Data\nThe dataset contains many categorical variables with many levels (like homeworld or species). It is excellent for practicing with the forcats package—learning how to lump rare categories together (e.g., “Other”) or reorder factors for better visualization.\nReal-World “Messiness”\nUnlike the perfectly curated iris dataset, starwars is intentionally “messy”:\nMissing Values (NAs): Droids like R2-D2 don’t have “hair color” or a “birth year,” and Jabba the Hutt doesn’t have a “gender” in the same way humans do. This forces students to learn how to handle NA values using filter() or replace_na().\nVariable Types: It includes character strings, numbers, and lists, providing a comprehensive workout for data cleaning.\nThe “Tidyverse” Native\nBecause it is a tibble, it behaves exactly as the Tidyverse expects. When you print it, it tells you the data types (e.g., &lt;chr&gt;, &lt;int&gt;, &lt;list&gt;) and only shows the first 10 rows, making it much more user-friendly for beginners than standard data frames that might flood the console with thousands of lines.\n\n\n\n\n\n\nNote\n\n\n\nEven though starwars is especially designed to illustrate features of Tidyverse packages, it’s also a good dataset for students to use if they want to first write code and base R and then rewrite the code using Tidyverse functions.\n\n\n\n\n6.4.7 ebird_taxonomy\nAnother example of a special-interest dataset is the ebird_taxonomy dataset.\nPackage:\nauk\nDescription:\nThis dataset provides a complete list of all bird species and recognizable forms (subspecies, hybrids, etc.) recognized by the Clements Checklist, which is the global taxonomic standard used by eBird.\nIt typically contains several key variables:\n\nspecies_code: The unique, alphanumeric code for every bird (e.g., barswa for Barn Swallow). This is the “primary key” used to link datasets.\nscientific_name: The Latin name (e.g., Hirundo rustica).\ncommon_name: The English name used by birders.\nTaxonomic Hierarchy: Columns for Order (e.g., Passeriformes) and Family (e.g., Hirundinidae), allowing users to group birds by biological relationship.\nreport_as: A critical column that helps “roll up” complex sightings (like subspecies) into a single species level for cleaner analysis.\n\nPopularity:\nThe popularity of ebird_taxonomy stems from the fact that eBird is one of the largest biodiversity data sources in existence, with over a billion bird observations worldwide.\nThe “Dictionary” for Big Data\nThe raw eBird Basic Dataset (EBD) is massive (terabytes in size) and often uses codes instead of names to save space. Scientists and hobbyists use ebird_taxonomy as a look-up table to turn those cryptic codes into readable species names or to filter their data by specific families (e.g., “Show me all hawks and eagles”).\nSolving the “Naming” Problem\nCommon names for birds change frequently, and different regions use different names for the same bird. This dataset provides the official, standardized mapping. It ensures that if one researcher calls a bird a “Common Eider” and another uses the Latin name, the auk package can reconcile them perfectly.\nFiltering Specialized Observations\neBird data is “noisy.” It contains records of hybrids, “slashes” (e.g., “Slaty-backed/Vega Gull”), and domestic birds. The ebird_taxonomy dataset allows researchers to quickly filter for “species” only, removing the ambiguous entries that might skew statistical results in a population study.\nSpatial and Temporal Integration\nBecause the taxonomy is updated annually, this dataset is the key to maintaining long-term consistency. When species are “split” (one species becomes two) or “lumped” by taxonomists, this dataset helps R users update their historical data to match modern scientific standards.\n\n\n\n\n\n\nNote\n\n\n\nThe auk package is renowned for its use in ornithology. It has more than just the ebird_taxonomy datasets as well as important functions for performing data analysis.\nWhile many (likely most) of the built-in datasets you’ll use will be “play” datasets for learning R, datasets in the auk package are examples of of how some datasets contained in R packages are used more for serious research.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Popular datasets</span>"
+    ]
+  },
+  {
+    "objectID": "c060070.html#wrap-up",
+    "href": "c060070.html#wrap-up",
+    "title": "6  Popular datasets",
+    "section": "6.5 Wrap-up",
+    "text": "6.5 Wrap-up\nThere’s a wide assortment of datasets available in many R packages. Typically, you’ll become aware of ones you’ll use most often through resources for learning R.\nThe datasets package contains some of the most often used and easily-accessed datasets for learning R. The vast number of R add-on packages offer both popular high-used as well as special interest datasets.\nRegardless of its source, it’s a good practice to gather at least a minimal amount of information about the dataset before using it.\nYou’ll often discover datasets through tutorials, course materials, or recommendations from others. If those sources aren’t enough, you may also search for datasets online or use your favorite large language model to suggest options.\nWhen choosing a dataset, it’s useful to first consider where it comes from. Some datasets are included in the base R installation, while others are provided by add-on packages that must be installed separately. In particular, datasets in the datasets package are a good place to start, since this package is installed with R and is immediately available in every R session.\nTo help you get started, this chapter introduces several built-in datasets from the datasets package, along with a few examples from commonly used add-on packages. These datasets are well suited for learning and practicing R programming concepts.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Popular datasets</span>"
+    ]
+  },
+  {
     "objectID": "conclusion.html",
     "href": "conclusion.html",
-    "title": "5  Conclusion",
+    "title": "7  Conclusion",
     "section": "",
     "text": "R’s built‑in datasets provide an ideal starting point for learning the language. They’re accessible, well‑documented, and designed to help you practice real data‑analysis skills. Throughout this book, the goal has been to give you a clear, consistent workflow for discovering these datasets, loading them, exploring their structure, and using them effectively in your own code.\nThe techniques you’ve learned form a practical foundation. They’re intentionally simple, reliable, and repeatable—exactly what you need when you’re building confidence with R. While there are additional ways to work with built‑in datasets, many of those alternatives require deeper knowledge of packages, environments, and memory management. Those tools can be powerful, but they also introduce nuances that sit beyond the scope of a beginner‑focused guide.\nBy applying the workflow presented here, you’ll be able to handle the vast majority of tasks you’re likely to encounter—easily 80% of the work you’ll want to do with R’s built‑in datasets.\nLearning R is a process, and you’ve taken an important step by learning how to work with the datasets that come built into the language. These datasets are more than practice material—they’re a gateway to understanding how R thinks about data. With the foundation you’ve built, you’re ready to move confidently into the broader world of data analysis, visualization, and statistical modeling.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Conclusion</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Conclusion</span>"
     ]
   }
 ]

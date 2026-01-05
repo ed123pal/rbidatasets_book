@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Popular datasets – R Built-in Datasets: Basic Concepts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./conclusion.html" rel="next">
+<link href="./c060060.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./c060070.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Popular datasets</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R Built-in Datasets: Basic Concepts</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./c060030.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">starwars dataset</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./c060040.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">diamonds dataset</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./c060050.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">datasets package</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./c060060.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Workflow</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./c060070.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Popular datasets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started"><span class="header-section-number">6.1</span> Getting started</a></li>
+  <li><a href="#datasets-package" id="toc-datasets-package" class="nav-link" data-scroll-target="#datasets-package"><span class="header-section-number">6.2</span> datasets package</a>
+  <ul class="collapse">
+  <li><a href="#iris" id="toc-iris" class="nav-link" data-scroll-target="#iris"><span class="header-section-number">6.2.1</span> iris</a></li>
+  <li><a href="#mtcars" id="toc-mtcars" class="nav-link" data-scroll-target="#mtcars"><span class="header-section-number">6.2.2</span> mtcars</a></li>
+  <li><a href="#usarrests" id="toc-usarrests" class="nav-link" data-scroll-target="#usarrests"><span class="header-section-number">6.2.3</span> USArrests</a></li>
+  <li><a href="#airquality" id="toc-airquality" class="nav-link" data-scroll-target="#airquality"><span class="header-section-number">6.2.4</span> airquality</a></li>
+  <li><a href="#airpassengers" id="toc-airpassengers" class="nav-link" data-scroll-target="#airpassengers"><span class="header-section-number">6.2.5</span> AirPassengers</a></li>
+  </ul></li>
+  <li><a href="#recommended-packages" id="toc-recommended-packages" class="nav-link" data-scroll-target="#recommended-packages"><span class="header-section-number">6.3</span> Recommended packages</a>
+  <ul class="collapse">
+  <li><a href="#mass" id="toc-mass" class="nav-link" data-scroll-target="#mass"><span class="header-section-number">6.3.1</span> MASS</a></li>
+  </ul></li>
+  <li><a href="#add-on-packages" id="toc-add-on-packages" class="nav-link" data-scroll-target="#add-on-packages"><span class="header-section-number">6.4</span> Add-on packages</a>
+  <ul class="collapse">
+  <li><a href="#penguins" id="toc-penguins" class="nav-link" data-scroll-target="#penguins"><span class="header-section-number">6.4.1</span> penguins</a></li>
+  <li><a href="#diamonds" id="toc-diamonds" class="nav-link" data-scroll-target="#diamonds"><span class="header-section-number">6.4.2</span> diamonds</a></li>
+  <li><a href="#flights" id="toc-flights" class="nav-link" data-scroll-target="#flights"><span class="header-section-number">6.4.3</span> flights</a></li>
+  <li><a href="#gapminder" id="toc-gapminder" class="nav-link" data-scroll-target="#gapminder"><span class="header-section-number">6.4.4</span> gapminder</a></li>
+  <li><a href="#islr" id="toc-islr" class="nav-link" data-scroll-target="#islr"><span class="header-section-number">6.4.5</span> ISLR</a></li>
+  <li><a href="#starwars" id="toc-starwars" class="nav-link" data-scroll-target="#starwars"><span class="header-section-number">6.4.6</span> starwars</a></li>
+  <li><a href="#ebird_taxonomy" id="toc-ebird_taxonomy" class="nav-link" data-scroll-target="#ebird_taxonomy"><span class="header-section-number">6.4.7</span> ebird_taxonomy</a></li>
+  </ul></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up"><span class="header-section-number">6.5</span> Wrap-up</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Popular datasets</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="getting-started" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">6.1</span> Getting started</h2>
+<p>You’ll often discover datasets through tutorials, course materials, or recommendations from others. If those sources aren’t enough, you may also search for datasets online or use your favorite large language model to suggest options.</p>
+<p>When choosing a dataset, it’s useful to first consider where it comes from. Some datasets are included in the base R installation, while others are provided by add-on packages that must be installed separately. In particular, datasets in the datasets package are a good place to start, since this package is installed with R and is immediately available in every R session.</p>
+<p>To help you get started, this chapter introduces several built-in datasets from the datasets package, along with a few examples from commonly used add-on packages. These datasets are well suited for learning and practicing R programming concepts.</p>
+</section>
+<section id="datasets-package" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="datasets-package"><span class="header-section-number">6.2</span> datasets package</h2>
+<p>While official usage statistics for the built-in datasets are not published. The datasets shown below are generally considered as popular based on their frequent appearance in R tutorials, examples, and statistical literature.</p>
+<section id="iris" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="iris"><span class="header-section-number">6.2.1</span> iris</h3>
+<p>Description: This classic dataset, introduced by Sir Ronald Fisher, contains measurements in centimeters of the sepal length, sepal width, petal length, and petal width for 50 flowers from each of three species of iris: Iris setosa, versicolor, and virginica.</p>
+<p>Popularity: It is arguably the most famous dataset in machine learning and statistics, widely used for introducing classification problems and concepts like cluster analysis.</p>
+</section>
+<section id="mtcars" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="mtcars"><span class="header-section-number">6.2.2</span> mtcars</h3>
+<p>Description: This dataset comprises fuel consumption and 10 other aspects of automobile design and performance for 32 automobiles (1973–74 models) from the 1974 Motor Trend US magazine.</p>
+<p>Popularity: It’s frequently used for illustrating regression analysis (especially multiple linear regression) and comparisons between different car characteristics.</p>
+</section>
+<section id="usarrests" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="usarrests"><span class="header-section-number">6.2.3</span> USArrests</h3>
+<p>Description: This data set contains statistics about violent crime rates (Murder, Assault, and Rape) in each of the 50 US states in 1973, along with the percentage of the urban population.</p>
+<p>Popularity: It’s a common example for demonstrating principal component analysis (PCA), cluster analysis, and other multivariate statistical techniques.</p>
+</section>
+<section id="airquality" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="airquality"><span class="header-section-number">6.2.4</span> airquality</h3>
+<p>Description: This dataset provides daily air quality measurements in New York City from May to September 1973, including Ozone, Solar Radiation, Wind, and Temperature.</p>
+<p>Popularity: It’s often used for learning about handling missing data (NA values), basic data exploration, and simple time-series analysis.</p>
+</section>
+<section id="airpassengers" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="airpassengers"><span class="header-section-number">6.2.5</span> AirPassengers</h3>
+<p>Description: A classic time-series dataset recording the monthly total number of international airline passengers from 1949 to 1960.</p>
+<p>Popularity: It’s an essential dataset for introducing time series analysis, including concepts like trend, seasonality, and forecasting models like ARIMA.</p>
+</section>
+</section>
+<section id="recommended-packages" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="recommended-packages"><span class="header-section-number">6.3</span> Recommended packages</h2>
+<p>Some packages that come with the standard R installation are not automatically loaded when an R session starts up. These packages are referred to as “recommended packages”. They are high-quality, widely-used packages the R Core Team consideres essential for most users. The MASS package is a famous example of this type of package. Others include lattice, mgcv and nlme. Below are details about MASS.</p>
+<section id="mass" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="mass"><span class="header-section-number">6.3.1</span> MASS</h3>
+<p>Here, I want to point out the MASS package because there’s sometimes confusion about this package for a couple of reasons.</p>
+<p>Sometimes, people will refer to the MASS dataset, but it’s a package that contains datasets. This is similar to how the datasets package contains many datasets.</p>
+<p>Be aware though, the MASS package contains many modern versions of functions that were previously used from the base R stats package. Think of <strong>stats</strong> as the standard toolbox and <strong>MASS</strong> as the professional upgrade—designed to handle messy, real-world data that violates the strict assumptions of classical statistics.</p>
+<p>The MASS package is a <strong>recommended</strong> package, meaning it’s installed with base R, but you’ll need to run library(MASS) to make it available to your R session.</p>
+<p>Below a few of the most frequently used MASS datasets:</p>
+<ul>
+<li><p><strong><code>Cars93</code></strong>: Data on 93 car models from 1993.</p></li>
+<li><p><strong><code>mammals</code></strong>: Brain and body weights for 62 species of land mammals.</p></li>
+<li><p><strong><code>birthwt</code></strong>: Risk factors associated with low infant birth weight.</p></li>
+<li><p><strong><code>crabs</code></strong>: Morphological measurements of Leptograpsus crabs.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Boston dataset was historically the most famous MASS dataset, but it was removed due to ethical concerns regarding the use of variables involving racial proportions. If needed, it can be found in the ISLR2 and spdep packages.</p>
+<p>I’ve included this callout to draw attention that it’s sometimes appropriate to consider the sournce and content of data in built-in datasets.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="add-on-packages" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="add-on-packages"><span class="header-section-number">6.4</span> Add-on packages</h2>
+<p>Packages that are not categorized as “base” or “recommened” are referred to as add-on packages. These packages are not part of the standard R installation. The most likely source for these packages is CRAN, but some are sourced from other places such as Bioconductor or various GitHub repositories.</p>
+<p>Based on use patterns in multiple learning resources, several datasets contained in R add-on packages, such as the ones listed below, are also very popular.</p>
+<section id="penguins" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="penguins"><span class="header-section-number">6.4.1</span> penguins</h3>
+<p>Package: palmerpenguins</p>
+<p>Description: Size measurements (bill length, bill depth, flipper length, body mass) for 344 penguins representing three species (Adélie, Chinstrap, and Gentoo) from three islands in the Palmer Archipelago, Antarctica.</p>
+<p>Popularity: It was specifically designed as a modern, more ethically sound, and approachable replacement for the iris dataset. It is popular because it includes missing values (NAs) and more obvious species clusters, making it perfect for teaching data cleaning and visualization.</p>
+</section>
+<section id="diamonds" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="diamonds"><span class="header-section-number">6.4.2</span> diamonds</h3>
+<p>Package: ggplot2</p>
+<p>Description: This dataset contains the prices and other attributes (carat, cut, color, clarity, and dimensions) of nearly 54,000 round-cut diamonds.</p>
+<p>Popularity: It is the primary dataset used to teach ggplot2. Because of its relatively large size (~54k rows), it is excellent for showing how to handle overplotting, identifying non-linear relationships, and demonstrating the impact of categorical variables on price.</p>
+</section>
+<section id="flights" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="flights"><span class="header-section-number">6.4.3</span> flights</h3>
+<p>Package: nycflights13</p>
+<p>Description: On-time data for all 336,776 flights that departed from New York City (JFK, LGA, EWR) in 2013. It is often used alongside other tables in the package like weather, planes, and airports.</p>
+<p>Popularity: It is the “go-to” dataset for teaching data wrangling with dplyr. Its massive scale and relational structure (requiring joins between different tables) make it ideal for learning how to manipulate, filter, and summarize complex real-world data.</p>
+</section>
+<section id="gapminder" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="gapminder"><span class="header-section-number">6.4.4</span> gapminder</h3>
+<p>Package: gapminder</p>
+<p>Description: An excerpt of the Gapminder data on life expectancy, GDP per capita, and population by country and continent over time (from 1952 to 2007 in increments of 5 years).</p>
+<p>Popularity: Made famous by Hans Rosling’s TED talks, this dataset is widely used to teach time-series visualization and animation (using gganimate). It helps users understand how to map aesthetics like size and color to multiple dimensions of data.</p>
+</section>
+<section id="islr" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="islr"><span class="header-section-number">6.4.5</span> ISLR</h3>
+<p>Packages: ISLR and ISLR2</p>
+<p>Description: Wage and other health/demographic data for 3,000 male workers in the Mid-Atlantic region of the US.</p>
+<p>Popularity: As the companion dataset for the influential book An Introduction to Statistical Learning, it is the standard for teaching regression modeling, splines, and cross-validation. It provides a realistic scenario for predicting a continuous variable (income) using a mix of numerical and categorical predictors.</p>
+</section>
+<section id="starwars" class="level3" data-number="6.4.6">
+<h3 data-number="6.4.6" class="anchored" data-anchor-id="starwars"><span class="header-section-number">6.4.6</span> starwars</h3>
+<p>While the starwars dataset is technically an add-on dataset, it can also be referred to as a “special-interest” dataset.</p>
+<p>Sometimes you’ll be drawn to a specific add-on dataset due to special personal or professional interests. For example, many people became fans of the Starwars franchise early in life so working with data about its characters is fun for them as adults.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Information is given below for two special-interest datasets. Significant details are provided here as an example of how an LLM (in this case Gemini) can be used to provide a detailed description a dataset.</p>
+</div>
+</div>
+<p><u>Package:</u></p>
+<p>dplyr</p>
+<p><u>Description:</u></p>
+<p>The starwars dataset is a <strong>tibble</strong> (a modern version of a data frame) containing information on characters from the Star Wars films. It includes 14 variables:</p>
+<p>Physical Traits: Name, height (cm), mass (kg), hair color, skin color, and eye color.</p>
+<p>Demographics: Birth year, biological sex, gender, and homeworld.</p>
+<p>Species: The species of the character (e.g., Human, Droid, Wookiee).</p>
+<p>List-Columns: This is its most unique feature. It contains three columns—<strong>films</strong>, <strong>vehicles</strong>, and <strong>starships</strong>—where each “cell” actually contains a list of items rather than a single value.</p>
+<p><u>Popularity:</u></p>
+<p>The <code>starwars</code> dataset isn’t just popular because people like the movies; it is strategically designed to teach <strong>modern data science workflows</strong> that older datasets like <code>iris</code> simply cannot handle.</p>
+<p>Teaching “List-Columns”</p>
+<p>Most traditional datasets are “flat” (one value per cell). However, in the real world, data is often nested (like JSON). Because a character like Obi-Wan Kenobi appears in multiple films and flies multiple starships, those columns contain lists. This makes <code>starwars</code> the gold standard for teaching the <code>nest()</code>, <code>unnest()</code>, and <code>purrr</code> map functions.</p>
+<p>Mastering Categorical Data</p>
+<p>The dataset contains many categorical variables with many levels (like <code>homeworld</code> or <code>species</code>). It is excellent for practicing with the <strong>forcats</strong> package—learning how to lump rare categories together (e.g., “Other”) or reorder factors for better visualization.</p>
+<p>Real-World “Messiness”</p>
+<p>Unlike the perfectly curated <code>iris</code> dataset, <code>starwars</code> is intentionally “messy”:</p>
+<p>Missing Values (NAs): Droids like R2-D2 don’t have “hair color” or a “birth year,” and Jabba the Hutt doesn’t have a “gender” in the same way humans do. This forces students to learn how to handle <code>NA</code> values using <code>filter()</code> or <code>replace_na()</code>.</p>
+<p>Variable Types: It includes character strings, numbers, and lists, providing a comprehensive workout for data cleaning.</p>
+<p>The “Tidyverse” Native</p>
+<p>Because it is a <strong>tibble</strong>, it behaves exactly as the Tidyverse expects. When you print it, it tells you the data types (e.g., <code>&lt;chr&gt;</code>, <code>&lt;int&gt;</code>, <code>&lt;list&gt;</code>) and only shows the first 10 rows, making it much more user-friendly for beginners than standard data frames that might flood the console with thousands of lines.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even though starwars is especially designed to illustrate features of Tidyverse packages, it’s also a good dataset for students to use if they want to first write code and base R and then rewrite the code using Tidyverse functions.</p>
+</div>
+</div>
+</section>
+<section id="ebird_taxonomy" class="level3" data-number="6.4.7">
+<h3 data-number="6.4.7" class="anchored" data-anchor-id="ebird_taxonomy"><span class="header-section-number">6.4.7</span> ebird_taxonomy</h3>
+<p>Another example of a special-interest dataset is the ebird_taxonomy dataset.</p>
+<p><u>Package:</u></p>
+<p>auk</p>
+<p><u>Description:</u></p>
+<p>This dataset provides a complete list of all bird species and recognizable forms (subspecies, hybrids, etc.) recognized by the <strong>Clements Checklist</strong>, which is the global taxonomic standard used by eBird.</p>
+<p>It typically contains several key variables:</p>
+<ul>
+<li><p><strong><code>species_code</code></strong>: The unique, alphanumeric code for every bird (e.g., <code>barswa</code> for Barn Swallow). This is the “primary key” used to link datasets.</p></li>
+<li><p><strong><code>scientific_name</code></strong>: The Latin name (e.g., <em>Hirundo rustica</em>).</p></li>
+<li><p><strong><code>common_name</code></strong>: The English name used by birders.</p></li>
+<li><p><strong>Taxonomic Hierarchy</strong>: Columns for <strong>Order</strong> (e.g., Passeriformes) and <strong>Family</strong> (e.g., Hirundinidae), allowing users to group birds by biological relationship.</p></li>
+<li><p><strong><code>report_as</code></strong>: A critical column that helps “roll up” complex sightings (like subspecies) into a single species level for cleaner analysis.</p></li>
+</ul>
+<p><u>Popularity:</u></p>
+<p>The popularity of <code>ebird_taxonomy</code> stems from the fact that eBird is one of the largest biodiversity data sources in existence, with over a billion bird observations worldwide.</p>
+<p>The “Dictionary” for Big Data</p>
+<p>The raw eBird Basic Dataset (EBD) is massive (terabytes in size) and often uses codes instead of names to save space. Scientists and hobbyists use <code>ebird_taxonomy</code> as a <strong>look-up table</strong> to turn those cryptic codes into readable species names or to filter their data by specific families (e.g., “Show me all hawks and eagles”).</p>
+<p>Solving the “Naming” Problem</p>
+<p>Common names for birds change frequently, and different regions use different names for the same bird. This dataset provides the <strong>official, standardized mapping</strong>. It ensures that if one researcher calls a bird a “Common Eider” and another uses the Latin name, the <code>auk</code> package can reconcile them perfectly.</p>
+<p>Filtering Specialized Observations</p>
+<p>eBird data is “noisy.” It contains records of hybrids, “slashes” (e.g., “Slaty-backed/Vega Gull”), and domestic birds. The <code>ebird_taxonomy</code> dataset allows researchers to quickly <strong>filter for “species” only</strong>, removing the ambiguous entries that might skew statistical results in a population study.</p>
+<p>Spatial and Temporal Integration</p>
+<p>Because the taxonomy is updated annually, this dataset is the key to maintaining <strong>long-term consistency</strong>. When species are “split” (one species becomes two) or “lumped” by taxonomists, this dataset helps R users update their historical data to match modern scientific standards.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The auk package is renowned for its use in ornithology. It has more than just the ebird_taxonomy datasets as well as important functions for performing data analysis.</p>
+<p>While many (likely most) of the built-in datasets you’ll use will be “play” datasets for learning R, datasets in the auk package are examples of of how some datasets contained in R packages are used more for serious research.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="wrap-up" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="wrap-up"><span class="header-section-number">6.5</span> Wrap-up</h2>
+<p>There’s a wide assortment of datasets available in many R packages. Typically, you’ll become aware of ones you’ll use most often through resources for learning R.</p>
+<p>The datasets package contains some of the most often used and easily-accessed datasets for learning R. The vast number of R add-on packages offer both popular high-used as well as special interest datasets.</p>
+<p>Regardless of its source, it’s a good practice to gather at least a minimal amount of information about the dataset before using it.</p>
+<p>You’ll often discover datasets through tutorials, course materials, or recommendations from others. If those sources aren’t enough, you may also search for datasets online or use your favorite large language model to suggest options.</p>
+<p>When choosing a dataset, it’s useful to first consider where it comes from. Some datasets are included in the base R installation, while others are provided by add-on packages that must be installed separately. In particular, datasets in the datasets package are a good place to start, since this package is installed with R and is immediately available in every R session.</p>
+<p>To help you get started, this chapter introduces several built-in datasets from the datasets package, along with a few examples from commonly used add-on packages. These datasets are well suited for learning and practicing R programming concepts.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./c060060.html" class="pagination-link" aria-label="Workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Workflow</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./conclusion.html" class="pagination-link" aria-label="Conclusion">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusion</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Ed Pal</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
